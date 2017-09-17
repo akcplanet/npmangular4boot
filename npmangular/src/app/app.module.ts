@@ -18,14 +18,13 @@ import { Ng2CompleterModule } from "ng2-completer";
 
 import { UiSwitchModule } from 'ngx-ui-switch/src'
 
-import { ConstantService } from './service/constant.service';
 import { MainDeirectiveDirective } from './directive/main-deirective.directive';
 import { HighlightDirective } from './directive/highlight.directive';
 import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
 import { SpringbootComponent } from './springboot/springboot.component';
-import { SpringbootModule } from './springboot/springboot.module';
 import { AppComponent } from './app.component';
-
+import { CorsbootService  } from './service/corsboot.service';
+import { ConstantService } from './service/constant.service';
 
 const routes: Routes = [
     { path: 'product', component: SpringbootComponent },
@@ -57,10 +56,9 @@ const routes: Routes = [
             { enableTracing: true }
         ),
         NgbModule.forRoot(),
-        UiSwitchModule,
-        SpringbootModule
+        UiSwitchModule
     ],
-    providers: [],
+    providers: [CorsbootService ,ConstantService],
     bootstrap: [AppComponent],
     exports: [RouterModule]
 })

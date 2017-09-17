@@ -23,7 +23,7 @@ import { Info } from '../model/info';
 @Injectable()
 export class CorsbootService {
 
-    private _baseUrl = 'http://localhost:9090/failtrade';
+    private _baseUrl = '/failtrade';
     constructor(private http: Http) {}
 
       public getngcompleterUsers(id: String): Observable<any[]> {
