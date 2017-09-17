@@ -1,0 +1,19 @@
+<ui-switch [(ngModel)]="fax" (change)="onChange(fax)" size="small" switchColor="#fcfcfc"></ui-switch>
+<ui-switch [(ngModel)]="email" (change)="onChange2(email)" size="small" switchColor="#fcfcfc"></ui-switch>
+<h1>Search color</h1>
+            <ng2-completer openOnFocus=true autoMatch=true autofocus=true [(ngModel)]="searchStr" [dataService]="dataService" [minSearchLength]="0"></ng2-completer>
+
+<!-- <h1>My First Attribute Directive</h1>
+<p myHighlight highlightColor="black">Highlighted in yellow</p>
+   <h2>Power Booster</h2>
+    <p>Super power boost: {{2 | exponentialStrength: 10}}</p> -->
+
+<ul class="list-group" *ngIf="!infoinput">
+    <li *ngFor="let cust of infolist" class="list-group-item list-group-item-info"
+		[class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
+		<span style="color:blue">{{cust.id}} - {{cust.name}}</span>
+	</li>
+	
+</ul>
+
+
